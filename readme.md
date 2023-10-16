@@ -98,7 +98,7 @@ myLib
 
 # The magic
 As we know, code that is set up in `SDIO 4bit mode` does not recognise the SD card. 
-This is why we configure the project in `SDIO 4bit mode` and then change it in `mountSDCard()` after the `hsd` has been initialized, how suggested by F. Belaid [here](https://community.st.com/t5/stm32cubemx-mcus/sdio-interface-not-working-in-4bits-with-stm32f4-firmware/td-p/591776). We just moved the code to the mount section.
+This is why we configure the project in `SDIO 1bit mode` and then change it to `SDIO 4bit mode` in `mountSDCard()` after the `hsd` has been initialized, how suggested by F. Belaid [here](https://community.st.com/t5/stm32cubemx-mcus/sdio-interface-not-working-in-4bits-with-stm32f4-firmware/td-p/591776). We just moved the code to the mount section.
 ```
 void mountSDCard(FRESULT *fr, FATFS *SDFatFs) {
 	if(isSDCardInserted())
